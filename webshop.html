@@ -38,6 +38,7 @@ function CheckBrowser() {
     } else {
             return false;
     }
+  
 }
 function doShowAll() {
     if (CheckBrowser()) {
@@ -90,6 +91,10 @@ function ModifyItem() {
 var name=document.forms.ShoppingList.name.value;
 document.forms.ShoppingList.data.value=localStorage.removeItem(name);
 doShowAll();
+}
+  function ClearAll() {
+    localStorage.clear();
+    doShowAll();
 }
 </script>
 <input type="button" value="Save"   onclick="SaveItem()">
