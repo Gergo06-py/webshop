@@ -61,6 +61,36 @@ function doShowAll() {
         alert('Cannot save shopping list as your browser does not support HTML 5');
     }
 }
+  function SaveItem() {
+
+    var name = document.forms.ShoppingList.name.value;
+    var data = document.forms.ShoppingList.data.value;
+    localStorage.setItem(name, data);
+    doShowAll();
+
+}
+  //Change an existing key-value in HTML5 storage.
+function ModifyItem() {
+    var name1 = document.forms.ShoppingList.name.value;
+    var data1 = document.forms.ShoppingList.data.value;
+    //check if name1 is already exists
+
+//Check if key exists.
+            if (localStorage.getItem(name1) !=null)
+            {
+              //update
+              localStorage.setItem(name1,data1);
+              document.forms.ShoppingList.data.value = localStorage.getItem(name1);
+            }
+
+    doShowAll();
+}
+  function RemoveItem()
+{
+var name=document.forms.ShoppingList.name.value;
+document.forms.ShoppingList.data.value=localStorage.removeItem(name);
+doShowAll();
+}
 </script>
 <input type="button" value="Save"   onclick="SaveItem()">
 <input type="button" value="Update" onclick="ModifyItem()">
