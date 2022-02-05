@@ -1,4 +1,7 @@
 button {
     background-color: #2dc4ff;
-    color: #FFF
+    color: #FFF;
+    border: none;
+    border-radius: 5%;
+    padding: 1%;
 }
